@@ -5,8 +5,9 @@
 {% macro displayNewsList(news_list) %}
 
 {% for source in news_list %}
+
 <div class="thumbnail">
-<li class="list-group-item">
+<li class="list-group-item" style="background-color: grey;font-size:large">
     <h4 class="text-center">
         <div class="card-header">
         {{ source.name }}
@@ -14,7 +15,7 @@
     </h4>
     <hr>
     <p>{{source.description}}</p>
-   <a class="text-center" target="_blank" href="/headlines/{{ source.id }}">
+   <a class="text-center" style = "color:maroon"target="_blank" href="/headlines/{{ source.id }}">
        {{ source.name }}</a>
 </li>
 </div>
@@ -28,12 +29,12 @@
 {% for headline in headlines_list %}
 
 <li>
-   <img src="{{ headline.urlToImage }}" alt="Card image cap" style='object-fit:cover; width: 300px;height: 337px;'>
-   <h4> {{ headline.title}} </h4>
-   <p>{{ headline.description }}</p>
-   <p>Published {{ headline.publishedAt }}</small></p>
-   <a target='_blank' href="{{ headline.url }}" class="btn btn-primary">LEARN MORE</a>
-</li>
+    <img src="{{ headline.urlToImage }}">
+    <h4> {{ headline.title}} </h4>
+    <p>{{ headline.description }}</p>
+    <p>Published {{ headline.publishedAt }}</small></p>
+    <a href="{{ headline.url }}" class="btn btn-primary">FULL STORY</a>
+ </li>
 <br>
 
 {% endfor %}
